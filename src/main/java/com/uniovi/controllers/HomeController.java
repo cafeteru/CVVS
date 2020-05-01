@@ -3,7 +3,7 @@ package com.uniovi.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.uniovi.services.util.LogService;
+import com.uniovi.services.LogService;
 
 @Controller
 public class HomeController {

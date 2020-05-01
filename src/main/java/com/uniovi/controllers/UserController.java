@@ -1,10 +1,12 @@
 package com.uniovi.controllers;
 
 import java.security.Principal;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -17,11 +19,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.uniovi.entities.User;
+import com.uniovi.services.LogService;
 import com.uniovi.services.RequestsService;
 import com.uniovi.services.RolesService;
+import com.uniovi.services.SecurityService;
 import com.uniovi.services.UsersService;
-import com.uniovi.services.security.SecurityService;
-import com.uniovi.services.util.LogService;
 import com.uniovi.validators.SignUpFormValidator;
 
 @Controller
@@ -145,11 +147,14 @@ public class UserController {
 
 	private Page<User> getUsers(Pageable pageable, String searchText,
 			User user) {
+		Page<User> users = new PageImpl<User>(new LinkedList<User>());
 		if (searchText != null && !searchText.isEmpty()) {
-			return usersService.searchByEmailAndNameAndSurname(pageable,
+			users = usersService.searchByEmailAndNameAndSurname(pageable,
 					searchText, user.getId());
+		} else {
+			users = usersService.getUsers(pageable, user.getId());
 		}
-		return usersService.getUsers(pageable, user.getId());
+		return users;
 	}
 
 	@PostMapping("/user/delete/{id}")
