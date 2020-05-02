@@ -8,7 +8,7 @@ import com.uniovi.tests.AbstractTest;
 public class UserNoRegisterTest extends AbstractTest {
 
 	@Test
-	void test() {
+	public void test() {
 		String user = "noexist@gmail.com";
 		String password = "123456";
 		new POLogin(driver, testUtil, user, password).goToPage();

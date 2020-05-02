@@ -4,9 +4,7 @@ import com.uniovi.pageObjects.posts.POCreatePost;
 import com.uniovi.tests.AbstractTest;
 import org.junit.jupiter.api.Test;
 
-import java.util.Date;
-
-public class CreatePostWithTitleTest extends AbstractTest {
+public class CreatePostWithTitleDescriptionTest extends AbstractTest {
 
     @Test
     public void test() {
@@ -17,7 +15,7 @@ public class CreatePostWithTitleTest extends AbstractTest {
                 "Su correo electrónico y | o contraseña no son válidos", false);
         testUtil.textPresent(
                 "Añadir publicación", true);
-        String title = "Titulo de la publicación " + new Date().toString();
+        String title = "Titulo de la publicación";
         testUtil.insertDataInput("title", title);
         testUtil.changeWebClick("add");
         testUtil.waitSeconds(5);

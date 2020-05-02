@@ -6,8 +6,8 @@ import com.uniovi.pageObjects.POAbstract;
 import com.uniovi.util.TestUtil;
 
 public class POLogin extends POAbstract {
-	private String username;
-	private String password;
+	private final String username;
+	private final String password;
 
 	public POLogin(WebDriver driver, TestUtil testUtil, String username,
 			String password) {
