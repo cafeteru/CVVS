@@ -1,4 +1,4 @@
-package com.uniovi;
+package com.uniovi.tests;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,17 +1,15 @@
-package com.uniovi.pageObject;
+package com.uniovi.pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
 import com.uniovi.util.TestUtil;
 
-public abstract class PageObjectAbstract {
+public abstract class POAbstract implements PODecorator {
 	protected WebDriver driver;
 	protected TestUtil testUtil;
 
-	public PageObjectAbstract(WebDriver driver, TestUtil testUtil) {
+	public POAbstract(WebDriver driver, TestUtil testUtil) {
 		this.driver = driver;
 		this.testUtil = testUtil;
 	}
-
-	public abstract void run();
 }

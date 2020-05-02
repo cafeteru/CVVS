@@ -1,16 +1,11 @@
 package com.uniovi;
 
-import org.junit.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.platform.suite.api.SelectPackages;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+@RunWith(JUnitPlatform.class)
+@SelectPackages("com.uniovi.tests")
 public class Sd1Uo239795ApplicationTests {
-
-	@Test
-	public void contextLoads() {
-	}
 
 }
