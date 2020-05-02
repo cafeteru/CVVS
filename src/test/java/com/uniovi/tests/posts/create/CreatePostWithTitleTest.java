@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import com.uniovi.pageObjects.posts.POCreatePost;
 import com.uniovi.tests.AbstractTest;
 
-public class CreatePostWithTitle extends AbstractTest {
+public class CreatePostWithTitleTest extends AbstractTest {
 
 	@Test
 	void test() {
