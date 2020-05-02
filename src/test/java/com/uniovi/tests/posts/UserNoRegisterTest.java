@@ -1,15 +1,17 @@
-package com.uniovi.tests;
+package com.uniovi.tests.posts;
 
 import org.junit.jupiter.api.Test;
 
 import com.uniovi.pageObjects.login.POLogin;
+import com.uniovi.tests.AbstractTest;
 
 public class UserNoRegisterTest extends AbstractTest {
 
 	@Test
 	void test() {
 		String user = "noexist@gmail.com";
-		new POLogin(driver, testUtil, user, "123456").goToPage();
+		String password = "123456";
+		new POLogin(driver, testUtil, user, password).goToPage();
 		testUtil.textPresent(
 				"Su correo electrónico y | o contraseña no son válidos", true);
 		testUtil.textPresent("Esta es una zona privada la web", false);

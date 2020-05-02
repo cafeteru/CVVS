@@ -8,6 +8,8 @@ public abstract class POAbstract implements PODecorator {
 	protected WebDriver driver;
 	protected TestUtil testUtil;
 
+	protected PODecorator decorator;
+
 	public POAbstract(WebDriver driver, TestUtil testUtil) {
 		this.driver = driver;
 		this.testUtil = testUtil;
