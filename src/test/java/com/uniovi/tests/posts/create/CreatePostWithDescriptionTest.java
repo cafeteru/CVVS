@@ -12,18 +12,18 @@ import io.cucumber.java.en.When;
 
 public class CreatePostWithDescriptionTest extends AbstractTest {
     private final int secondsToWait = 5;
-    private final String description = "Descripción de la publicación "
+    private final String description = "Description of publication "
             + new Date().toString();
 
-    @Given("The user is correctly identified")
-    public void the_user_is_correctly_identified() {
+    @Given("User is correctly identified")
+    public void user_is_correctly_identified() {
         String email = "cvvs@uniovi.es";
         String password = "123456";
         new POLoginIdentify(driver, testUtil, secondsToWait, email, password)
                 .goToPage();
         testUtil.textPresent(
-                "Su correo electrónico y | o contraseña no son válidos", false);
-        testUtil.textPresent("Registrarse", false);
+                "Your email and | or password is invalid", false);
+        testUtil.textPresent("Signup", false);
         testUtil.textPresent("Logout", true);
     }
 
@@ -31,8 +31,8 @@ public class CreatePostWithDescriptionTest extends AbstractTest {
     public void access_the_post_creation_menu() {
         new POCreatePost(driver, testUtil, secondsToWait).goToPage();
         testUtil.textPresent(
-                "Su correo electrónico y | o contraseña no son válidos", false);
-        testUtil.textPresent("Añadir publicación", true);
+                "Your email and | or password is invalid", false);
+        testUtil.textPresent("Add publication", true);
     }
 
     @When("just enter the description")
@@ -44,7 +44,7 @@ public class CreatePostWithDescriptionTest extends AbstractTest {
     public void the_application_doesnt_create_the_post() {
         testUtil.changeWebClick("add");
         testUtil.waitSeconds(secondsToWait);
-        testUtil.textPresent("Añadir publicación", true);
-        testUtil.textPresent("Lista de publicaciones", false);
+        testUtil.textPresent("Add publication", true);
+        testUtil.textPresent("List of posts", false);
     }
 }

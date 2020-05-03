@@ -11,10 +11,10 @@ import io.cucumber.java.en.When;
 public class CreatePostWithOutAuthenticationTest extends AbstractTest {
     private final int secondsToWait = 5;
 
-    @Given("The user is not identified")
-    public void the_user_is_not_identified() {
+    @Given("User is not identified")
+    public void user_is_not_identified() {
         new POLogin(driver, testUtil, secondsToWait).goToPage();
-        testUtil.textPresent("Registrarse", true);
+        testUtil.textPresent("Signup", true);
         testUtil.textPresent("Logout", false);
     }
 
@@ -27,9 +27,9 @@ public class CreatePostWithOutAuthenticationTest extends AbstractTest {
     @Then("the application will not let him in")
     public void the_application_will_not_let_him_in() {
         testUtil.textPresent(
-                "Su correo electrónico y | o contraseña no son válidos", false);
-        testUtil.textPresent("Esta es una zona privada la web", false);
-        testUtil.textPresent("Publicaciones", false);
+                "Your email and | or password is invalid", false);
+        testUtil.textPresent("This is a private area the web", false);
+        testUtil.textPresent("Publications", false);
         testUtil.textPresent("Logout", false);
     }
 }
