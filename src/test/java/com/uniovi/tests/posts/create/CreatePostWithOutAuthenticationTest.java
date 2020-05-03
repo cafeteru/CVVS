@@ -1,7 +1,7 @@
 package com.uniovi.tests.posts.create;
 
-import com.uniovi.pageObjects.login.POLogin;
-import com.uniovi.pageObjects.posts.POCreatePostWithOutAuthentification;
+import com.uniovi.pageobjects.login.POLogin;
+import com.uniovi.pageobjects.posts.POCreatePostWithOutAuthentification;
 import com.uniovi.tests.AbstractTest;
 
 import io.cucumber.java.en.Given;

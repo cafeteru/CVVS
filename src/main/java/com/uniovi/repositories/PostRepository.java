@@ -8,6 +8,6 @@ import com.uniovi.entities.Post;
 
 public interface PostRepository extends JpaRepository<Post, Long> {
 
-	Page<Post> findAllByUserId(Pageable pageable, Long id);
+	Page<Post> findAllByUserIdOrderByIdDesc(Pageable pageable, Long id);
 
 }

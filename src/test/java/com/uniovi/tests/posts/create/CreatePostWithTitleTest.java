@@ -2,8 +2,8 @@ package com.uniovi.tests.posts.create;
 
 import java.util.Date;
 
-import com.uniovi.pageObjects.login.POLoginIdentify;
-import com.uniovi.pageObjects.posts.POCreatePost;
+import com.uniovi.pageobjects.login.POLoginIdentify;
+import com.uniovi.pageobjects.posts.POCreatePost;
 import com.uniovi.tests.AbstractTest;
 
 import io.cucumber.java.en.Given;
@@ -38,13 +38,13 @@ public class CreatePostWithTitleTest extends AbstractTest {
 	@When("just enter the title")
 	public void just_enter_the_title() {
 		testUtil.insertDataInput("title", title);
-		testUtil.changeWebClick("add");
-		testUtil.waitSeconds(secondsToWait);
 	}
 
 	@Then("the application does not create the post")
 	public void the_application_does_not_create_the_post() {
+		testUtil.changeWebClick("add");
+		testUtil.waitSeconds(secondsToWait);
+		testUtil.textPresent("Añadir publicación", true);
 		testUtil.textPresent("Lista de publicaciones", false);
-		testUtil.textPresent(title, false);
 	}
 }

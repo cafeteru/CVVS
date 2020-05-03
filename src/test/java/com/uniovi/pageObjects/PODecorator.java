@@ -1,4 +1,4 @@
-package com.uniovi.pageObjects;
+package com.uniovi.pageobjects;
 
 public interface PODecorator {
 	void goToPage();

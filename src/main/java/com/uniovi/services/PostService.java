@@ -26,7 +26,7 @@ public class PostService {
 	}
 
 	public Page<Post> findAll(Pageable pageable, Long id) {
-		return postRepository.findAllByUserId(pageable, id);
+		return postRepository.findAllByUserIdOrderByIdDesc(pageable, id);
 	}
 
 	/**

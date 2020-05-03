@@ -1,4 +1,4 @@
-package com.uniovi.pageObjects;
+package com.uniovi.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 
