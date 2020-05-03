@@ -14,9 +14,9 @@ public class CreatePostWithTitleDescriptionTest extends AbstractTest {
 	private final int secondsToWait = 5;
 	private final String description = "Descripción de la publicación "
 			+ new Date().toString();
-	
-	@Given("The user is identified correctily")
-	public void the_user_is_identified_correctily() {
+
+	@Given("The user is correctly identified")
+	public void the_user_is_correctly_identified() {
 		String email = "cvvs@uniovi.es";
 		String password = "123456";
 		new POLoginIdentify(driver, testUtil, secondsToWait, email, password)

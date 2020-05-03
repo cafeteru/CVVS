@@ -22,8 +22,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<junit.jupiter.version>5.5.2</junit.jupiter.version>
-		<junit.platform.version>1.5.2</junit.platform.version>
 		<cucumber.version>5.7.0</cucumber.version>
 	</properties>
 
@@ -87,9 +85,8 @@
 			<artifactId>selenium-chrome-driver</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<version>${junit.jupiter.version}</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

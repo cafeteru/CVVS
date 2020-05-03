@@ -24,8 +24,8 @@ public class CreatePostWithOutAuthenticationTest extends AbstractTest {
                 .goToPage();
     }
 
-    @Then("the application will not let you in")
-    public void the_application_will_not_let_you_in() {
+    @Then("the application will not let him in")
+    public void the_application_will_not_let_him_in() {
         testUtil.textPresent(
                 "Su correo electrónico y | o contraseña no son válidos", false);
         testUtil.textPresent("Esta es una zona privada la web", false);
