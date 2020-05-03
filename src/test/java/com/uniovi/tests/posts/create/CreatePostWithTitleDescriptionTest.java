@@ -1,25 +1,51 @@
 package com.uniovi.tests.posts.create;
 
+import java.util.Date;
+
+import com.uniovi.pageObjects.login.POLoginIdentify;
 import com.uniovi.pageObjects.posts.POCreatePost;
 import com.uniovi.tests.AbstractTest;
-import org.junit.jupiter.api.Test;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class CreatePostWithTitleDescriptionTest extends AbstractTest {
+	private final int secondsToWait = 5;
+	private final String description = "Descripción de la publicación "
+			+ new Date().toString();
+	
+	@Given("The user is identified correctily")
+	public void the_user_is_identified_correctily() {
+		String email = "cvvs@uniovi.es";
+		String password = "123456";
+		new POLoginIdentify(driver, testUtil, secondsToWait, email, password)
+				.goToPage();
+		testUtil.textPresent(
+				"Su correo electrónico y | o contraseña no son válidos", false);
+		testUtil.textPresent("Registrarse", false);
+		testUtil.textPresent("Logout", true);
+	}
 
-    @Test
-    public void test() {
-        String email = "cvvs@uniovi.es";
-        String password = "123456";
-        new POCreatePost(driver, testUtil, email, password).goToPage();
-        testUtil.textPresent(
-                "Su correo electrónico y | o contraseña no son válidos", false);
-        testUtil.textPresent(
-                "Añadir publicación", true);
-        String title = "Titulo de la publicación";
-        testUtil.insertDataInput("title", title);
-        testUtil.changeWebClick("add");
-        testUtil.waitSeconds(5);
-        testUtil.textPresent("Lista de publicaciones", false);
-        testUtil.textPresent(title, false);
-    }
+	@When("access the post creation menu")
+	public void access_the_post_creation_menu() {
+		new POCreatePost(driver, testUtil, secondsToWait).goToPage();
+		testUtil.textPresent(
+				"Su correo electrónico y | o contraseña no son válidos", false);
+		testUtil.textPresent("Añadir publicación", true);
+	}
+
+	@When("just enter the description")
+	public void just_enter_the_description() {
+		testUtil.insertDataInput("description", description);
+		testUtil.changeWebClick("add");
+		testUtil.waitSeconds(secondsToWait);
+	}
+
+	@Then("the application doesnt create the post")
+	public void the_application_doesnt_create_the_post() {
+		testUtil.textPresent("Lista de publicaciones", false);
+		testUtil.textPresent(description, false);
+	}
+
 }
