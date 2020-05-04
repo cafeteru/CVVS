@@ -1,5 +1,6 @@
 package com.uniovi;
 
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -23,6 +24,13 @@ public class CucumberTest {
 	public static void setUp() {
 		driver = TestDriver.getDriver();
 		driver.manage().window().maximize();
+	}
+
+	@After
+	public static void resetCache() {
+		if (driver != null) {
+			driver.manage().deleteAllCookies();
+		}
 	}
 
 	@AfterClass

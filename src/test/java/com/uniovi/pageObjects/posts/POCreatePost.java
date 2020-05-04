@@ -1,8 +1,9 @@
-package com.uniovi.pageobjects.posts;
+package com.uniovi.pageObjects.posts;
 
-import com.uniovi.pageobjects.POAbstract;
-import com.uniovi.util.TestUtil;
 import org.openqa.selenium.WebDriver;
+
+import com.uniovi.pageObjects.POAbstract;
+import com.uniovi.util.TestUtil;
 
 public class POCreatePost extends POAbstract {
 

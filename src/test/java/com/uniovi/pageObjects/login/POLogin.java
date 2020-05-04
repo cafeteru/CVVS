@@ -1,8 +1,8 @@
-package com.uniovi.pageobjects.login;
+package com.uniovi.pageObjects.login;
 
 import org.openqa.selenium.WebDriver;
 
-import com.uniovi.pageobjects.POAbstract;
+import com.uniovi.pageObjects.POAbstract;
 import com.uniovi.util.TestUtil;
 
 public class POLogin extends POAbstract {

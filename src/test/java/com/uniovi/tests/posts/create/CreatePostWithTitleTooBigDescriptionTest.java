@@ -1,13 +1,14 @@
 package com.uniovi.tests.posts.create;
 
-import com.uniovi.pageobjects.login.POLoginIdentify;
-import com.uniovi.pageobjects.posts.POCreatePost;
+import java.util.Date;
+
+import com.uniovi.pageObjects.login.POLoginIdentify;
+import com.uniovi.pageObjects.posts.POCreatePost;
 import com.uniovi.tests.AbstractTest;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import java.util.Date;
 
 public class CreatePostWithTitleTooBigDescriptionTest extends AbstractTest {
     private final int secondsToWait = 5;

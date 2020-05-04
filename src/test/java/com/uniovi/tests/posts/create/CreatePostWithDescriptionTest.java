@@ -2,8 +2,8 @@ package com.uniovi.tests.posts.create;
 
 import java.util.Date;
 
-import com.uniovi.pageobjects.login.POLoginIdentify;
-import com.uniovi.pageobjects.posts.POCreatePost;
+import com.uniovi.pageObjects.login.POLoginIdentify;
+import com.uniovi.pageObjects.posts.POCreatePost;
 import com.uniovi.tests.AbstractTest;
 
 import io.cucumber.java.en.Given;

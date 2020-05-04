@@ -1,6 +1,6 @@
 Feature: Creation post
 
-  Scenario: Post creation only title
+ Scenario: Post creation only title
     Given User is identified
     When tries to access the post creation menu
     And just enter the title
