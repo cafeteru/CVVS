@@ -11,7 +11,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CreatePostWithTitleDescriptionTest extends AbstractTest {
-    private final int secondsToWait = 5;
     private final String title = "Title of publication "
             + new Date().toString();
     private final String description = "Description of publication "

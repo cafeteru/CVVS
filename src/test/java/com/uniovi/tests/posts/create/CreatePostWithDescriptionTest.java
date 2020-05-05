@@ -11,7 +11,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CreatePostWithDescriptionTest extends AbstractTest {
-    private final int secondsToWait = 5;
     private final String description = "Description of publication "
             + new Date().toString();
 

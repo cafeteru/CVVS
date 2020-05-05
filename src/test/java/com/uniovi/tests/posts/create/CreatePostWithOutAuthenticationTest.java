@@ -9,7 +9,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CreatePostWithOutAuthenticationTest extends AbstractTest {
-    private final int secondsToWait = 5;
 
     @Given("User is not identified")
     public void user_is_not_identified() {

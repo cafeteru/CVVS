@@ -1,4 +1,4 @@
-Feature: Creation post
+ Feature: Creation post
 
  Scenario: Post creation only title
     Given User is identified

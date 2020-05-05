@@ -11,7 +11,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CreatePostWithTitleDescriptionTooBigTest extends AbstractTest {
-	private final int secondsToWait = 5;
 	private final String title = "Title of publication "
 			+ new Date().toString();
 	private String description = "";

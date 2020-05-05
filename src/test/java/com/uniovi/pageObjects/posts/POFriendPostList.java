@@ -5,16 +5,18 @@ import org.openqa.selenium.WebDriver;
 import com.uniovi.pageObjects.POAbstract;
 import com.uniovi.util.TestUtil;
 
-public class POCreatePostWithOutAuthentification extends POAbstract {
+public class POFriendPostList extends POAbstract {
+	private final int idFriend;
 
-	public POCreatePostWithOutAuthentification(WebDriver driver,
-			TestUtil testUtil, int secondsToWait) {
+	public POFriendPostList(WebDriver driver, TestUtil testUtil,
+			int secondsToWait, int idFriend) {
 		super(driver, testUtil, secondsToWait);
+		this.idFriend = idFriend;
 	}
 
 	@Override
 	public void goToPage() {
-		testUtil.changeWebUrl("http://localhost:8090/post/friends/10005");
+		testUtil.changeWebClick("" + idFriend);
 		testUtil.waitSeconds(secondsToWait);
 	}
 }

@@ -13,6 +13,8 @@ public class POLogin extends POAbstract {
 
 	@Override
 	public void goToPage() {
+		testUtil.changeWebUrl("http://localhost:8090/logout");
+		testUtil.waitSeconds(secondsToWait);
 		testUtil.changeWebUrl("http://localhost:8090/login?lang=en");
 		testUtil.waitSeconds(secondsToWait);
 	}
