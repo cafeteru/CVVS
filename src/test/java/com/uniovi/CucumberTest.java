@@ -14,7 +14,8 @@ import io.cucumber.junit.CucumberOptions;
  * To run cucumber test.
  */
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/features", glue = "com.uniovi.tests", monochrome = true, plugin = {
+@CucumberOptions(features = "src/test/resources/features", 
+glue = "com.uniovi.tests", monochrome = true, plugin = {
 		"pretty" })
 public class CucumberTest {
 	private static WebDriver driver;

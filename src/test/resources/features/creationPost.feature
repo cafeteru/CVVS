@@ -1,5 +1,10 @@
  Feature: Creation post
 
+  Scenario: Unidentified post creation
+    Given User is not identified
+    When tries to access the post creation menu directly
+    Then the application will not let him in
+    
  Scenario: Post creation only title
     Given User is identified
     When tries to access the post creation menu
@@ -32,8 +37,3 @@
     And enter a title
     And enter a description correctly
     Then the application can create the post correctly
-    
-  Scenario: Unidentified post creation
-    Given User is not identified
-    When tries to access the post creation menu directly
-    Then the application will not let him in
