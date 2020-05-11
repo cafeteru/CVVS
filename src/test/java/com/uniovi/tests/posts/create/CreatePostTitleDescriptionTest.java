@@ -6,17 +6,19 @@ import com.uniovi.pageObjects.login.POLoginIdentify;
 import com.uniovi.pageObjects.posts.POCreatePost;
 import com.uniovi.tests.AbstractTest;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class CreatePostWithTitleDescriptionTooBigTest extends AbstractTest {
+public class CreatePostTitleDescriptionTest extends AbstractTest {
 	private final String title = "Title of publication "
 			+ new Date().toString();
-	private String description = "";
+	private final String description = "Description of publication "
+			+ new Date().toString();
 
-	@Given("User login correctly")
-	public void user_login_correctly() {
+	@Given("User can identified")
+	public void the_user_can_identified() {
 		String email = "cvvs@uniovi.es";
 		String password = "123456";
 		new POLoginIdentify(driver, testUtil, secondsToWait, email, password)
@@ -26,28 +28,25 @@ public class CreatePostWithTitleDescriptionTooBigTest extends AbstractTest {
 		testUtil.textPresent("Logout", true);
 	}
 
-	@When("he goes to the post creation menu again")
-	public void he_goes_to_the_post_creation_menu_again() {
+	@When("him access the post creation menu")
+	public void him_access_the_post_creation_menu() {
 		new POCreatePost(driver, testUtil, secondsToWait).goToPage();
 		testUtil.textPresent("Your email and | or password is invalid", false);
 		testUtil.textPresent("Add publication", true);
 	}
 
-	@When("enter a title")
-	public void enter_a_title() {
+	@And("enter the title")
+	public void enter_the_title() {
 		testUtil.insertDataInput("title", title);
 	}
 
-	@When("enter a description correctly")
-	public void enter_a_description_correctly() {
-		while (description.length() <= 255) {
-			description += 1;
-		}
+	@And("enter the description")
+	public void enter_the_description() {
 		testUtil.insertDataInput("description", description);
 	}
 
-	@Then("the application can create the post correctly")
-	public void the_application_can_create_the_post_correctly() {
+	@Then("the application create the post")
+	public void the_application_create_the_post() {
 		testUtil.changeWebClick("add");
 		testUtil.waitSeconds(secondsToWait);
 		testUtil.textPresent("Send", false);
@@ -55,5 +54,4 @@ public class CreatePostWithTitleDescriptionTooBigTest extends AbstractTest {
 		testUtil.textPresent(title, true);
 		testUtil.textPresent(description, true);
 	}
-
 }
