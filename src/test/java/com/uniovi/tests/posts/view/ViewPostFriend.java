@@ -11,6 +11,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ViewPostFriend extends AbstractTest {
+	private final int idFriend = 10006;
 
 	@Given("User is identified within the application")
 	public void user_is_identified_within_the_application() {
@@ -33,7 +34,8 @@ public class ViewPostFriend extends AbstractTest {
 
 	@And("select one of them")
 	public void select_one_of_them() {
-		new POFriendPostList(driver, testUtil, secondsToWait, 10005).goToPage();
+		new POFriendPostList(driver, testUtil, secondsToWait, idFriend)
+				.goToPage();
 	}
 
 	@Then("he can view his posts")
