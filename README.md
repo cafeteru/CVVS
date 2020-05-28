@@ -8,13 +8,15 @@ Evaluación extraordinaria con motivo de la suspensión de la actividad presenci
    - Ejecutar el archivo `startup.bat` en Windows. En Linux o Mac ejecutar en un terminal el comando que esta dentro del fichero.
 2. Iniciar la aplicacion de Spring Boot
    - En linea de comando ejecutar el siguiente comando
-   ```cmd
-   mvn spring-boot:run
-   ```
+   
+```cmd
+mvn spring-boot:run
+```
 3. Ejecutar las pruebas
    - En linea de comando ejecutar el siguiente comando
-     ```cmd
-     mvn test
-     ```
+
+```cmd
+mvn test
+```
 
 Para ejecutar este proyecto en un IDE hay que importarlo como un proyecto de Maven
